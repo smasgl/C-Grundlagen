@@ -4,15 +4,40 @@
 #include <stdlib.h>
 #include <math.h>
 
-int Addition(int zahl1, int zahl2);
+// Prototypen => mit diesen Prototypen weiß der Compiler von der Funktion die später folgt
+int Absolut(int zahl);
+void Ausgeben();
 
 int main()
 {
-	int a = 5;
-	int b = 17;
+	// Meine Funktion
+	Ausgeben();
 
-	int a_pow = a * a;
-	int b_pow = b * b;
-	int a_plus_b = a_pow + b_pow;
-	int c = sqrt(a_plus_b);
+	// Math.h library
+	// Die Math.h library besitz viele solche funktionen die das Programmieren erleichtern
+	// z.B.: abs => Absolut
+	int ergebnis = abs(5);	// Absolut Wert
+	ergebnis = pow(5, 2);	// Hoch
+	ergebnis = sqrt(5);		// Wurzel
+	ergebnis = sin(5);		// Sinus
+	ergebnis = tan(5);		// Tangens
+	ergebnis = round(5.6);	// Runden
+}
+
+/*
+Rückgabetyp, Name, (Formale Parameter) */
+int Absolut(int zahl)	// gibt eine Zahl zurück heißt Absolut und bekommt eine Zahl als Parameter
+{
+	if (zahl >= 0)
+		return zahl;	// Ergebnis mit dem Schlüsselwort return zurückgeben
+	else
+		return -(zahl);	// Ergebnis mit dem Schlüsselwort return zurückgeben
+}
+
+/*
+Rückgabetyp, Name, (Formale Parameter) */
+void Ausgeben() // gibt nichts zurück heißt Ausgeben und bekommt nichts als Parameter
+{
+	// Ergebis steht im Funktionsaufruf selbst.
+	printf("My func: %i\n\r", Absolut(-1));
 }
